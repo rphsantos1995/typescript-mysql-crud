@@ -1,6 +1,6 @@
-import { OkPacket, ResultSetHeader, RowDataPacket } from 'mysql2';
+import { OkPacket } from 'mysql2';
 import connection from './connection';
-import { IUser, User } from './interfaceUser';
+import { IUser, User, InputUserLogin } from './interfaceUser';
 
 const create = async (user: IUser): Promise<IUser> => {
   const { username, classe, level, password } = user;
@@ -10,11 +10,20 @@ const create = async (user: IUser): Promise<IUser> => {
   );
   const { insertId: id } = result;
 
-  const insertedUser: User = { id, username, classe, level, password };
+  const createdUser: User = { id, username, classe, level, password };
 
-  return insertedUser;
+  return createdUser;
+};
+
+const login = async (user: InputUserLogin) => {
+  const { username, password } = user;
+  const query = `SELECT * from Trybesmith.Users WHERE username = ? AND
+  password = ?`;
+  const [result] = await connection.query<OkPacket>(query, [username, password]);
+  if (result.insertId === undefined) return { error: 'Invalid credentials' };
 };
 
 export default {
   create,
+  login,
 };
