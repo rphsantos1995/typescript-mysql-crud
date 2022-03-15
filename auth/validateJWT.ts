@@ -1,10 +1,9 @@
-import jwt from 'jsonwebtoken';
-import { Router, Request, Response, NextFunction } from 'express'; 
-import  User from '../src/models/userModel';
+// import jwt from 'jsonwebtoken';
+// import { Router, Request, Response, NextFunction } from 'express'; 
+// import User from '../src/models/userModel';
 
-
-// In the env cenario, its necessary to explicit the key.
-const JWT_SECRET = 'mysecretkey';
+// // In the env cenario, its necessary to explicit the key.
+// const JWT_SECRET = 'mysecretkey';
 
 // module.exports = async (req: Request, res: Response, next: NextFunction) => {
 //   const token = req.headers.authorization;

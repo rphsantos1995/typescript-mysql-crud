@@ -30,7 +30,7 @@ afterAll(async () => {
 // Clean database before tests
 beforeAll(async () => { await recreateDatabase(); });
 
-describe("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
+describe.only("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
   // Close connections and server after tests
   afterAll(async () => {
     await dropDatabase();
@@ -68,8 +68,6 @@ describe("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
     expect(result.body.error).toEqual("Username must be longer than 2 characters");
   });
 
- 
-
   it('Será validado que o campo "classe" é obrigatório', async () => {
     const result = await request(app).post("/users").send({
       username: "username",
@@ -101,8 +99,6 @@ describe("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
     expect(result.statusCode).toEqual(422);
     expect(result.body.error).toEqual("Classe must be longer than 2 characters");
   });
-
-
 
   it('Será validado que o campo "level" é obrigatório', async () => {
     const result = await request(app).post("/users").send({
