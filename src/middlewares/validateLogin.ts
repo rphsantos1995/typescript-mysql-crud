@@ -1,10 +1,10 @@
-import Joi from "joi";
-import { NextFunction, Request, Response } from "express";
+import Joi from 'joi';
+import { NextFunction, Request, Response } from 'express';
 
-export const validateLogin = (
+const validateLogin = (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const schema = Joi.object({
     username: Joi.string().email().required(),
@@ -19,3 +19,5 @@ export const validateLogin = (
 
   next();
 };
+
+export default { validateLogin };
