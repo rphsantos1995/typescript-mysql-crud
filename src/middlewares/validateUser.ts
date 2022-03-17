@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import userSchema from './userSchema';
+import userSchema from './schemas/userSchema';
 
 const validateUser = (
   req: Request,
