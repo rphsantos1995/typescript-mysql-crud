@@ -12,6 +12,11 @@ const createProduct = async (req: Request, res: Response, _next: NextFunction) =
   return res.status(201).json({ item: { ...newUserCreated } });
 };
 
+// const getAllProducts = async (req: Request, res: Response, _next: NextFunction) => {
+//   const allProducts = await productService.getAllProducts();
+//   return res.status(201).json(allProducts);
+// };
+
 productRouter.post('/', validateJWT, validateProduct, createProduct);
 
 export default productRouter;
