@@ -18,6 +18,6 @@ const getAllProducts = async (req: Request, res: Response, _next: NextFunction) 
 };
 
 productRouter.post('/', validateJWT, validateProduct, createProduct);
-productRouter.get('/',validateJWT, getAllProducts);
+productRouter.get('/', validateJWT, getAllProducts);
 
 export default productRouter;

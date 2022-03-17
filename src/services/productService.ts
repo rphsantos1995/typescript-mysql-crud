@@ -9,7 +9,6 @@ const createProduct = async (userInfo: IProduct) => {
 const getAllProducts = async () => {
   const allProducts = await productModel.getAllProducts();
   return allProducts;
-}
-
+};
 
 export default { createProduct, getAllProducts };
