@@ -1,4 +1,4 @@
-import { OkPacket } from 'mysql2';
+import { OkPacket, RowDataPacket } from 'mysql2';
 import connection from './connection';
 import { IUser, User, InputUserLogin } from './interfaceUser';
 
@@ -19,8 +19,8 @@ const login = async (user: InputUserLogin) => {
   const { username, password } = user;
   const query = `SELECT * from Trybesmith.Users WHERE username = ? AND
   password = ?`;
-  const [result] = await connection.query<OkPacket>(query, [username, password]);
-  if (result.insertId === undefined) return { error: 'Invalid credentials' };
+  const [result] = await connection.query<RowDataPacket[]>(query, [username, password]);
+  return result;
 };
 
 export default {
