@@ -17,4 +17,9 @@ const createProduct = async (product: IProduct): Promise<IProduct> => {
   return createdProduct;
 };
 
-export default { createProduct };
+const getAllProducts = async () => {
+  const [allProducts] = await connection.execute<OkPacket>('SELECT * from Trybesmith.Products');
+  return allProducts;
+};
+
+export default { createProduct, getAllProducts };
