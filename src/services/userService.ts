@@ -1,4 +1,4 @@
-import { IUser } from '../models/interfaceUser';
+import { IUser, InputUserLogin } from '../models/interfaceUser';
 import UserModel from '../models/userModel';
 
 const create = async (userInfo: IUser) => {
@@ -6,4 +6,9 @@ const create = async (userInfo: IUser) => {
   return newUser;
 };
 
-export default { create };
+const login = async (userInfo: InputUserLogin) => {
+  const userLogin = await UserModel.login(userInfo);
+  return userLogin;
+};
+
+export default { create, login };

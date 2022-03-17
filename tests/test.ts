@@ -181,7 +181,7 @@ describe.only("1 - Crie um endpoint para o cadastro de pessoas usuárias", () =>
   });
 });
 
-describe("2 - Crie um endpoint para o login de pessoas usuárias", () => {
+describe.only("2 - Crie um endpoint para o login de pessoas usuárias", () => {
   // Clean database and create one user before tests
   beforeAll(async () => {
     await recreateDatabase();
@@ -241,7 +241,7 @@ describe("2 - Crie um endpoint para o login de pessoas usuárias", () => {
   });
 });
 
-describe("3 - Crie um endpoint para o cadastro de produtos", () => {
+describe.only("3 - Crie um endpoint para o cadastro de produtos", () => {
   let token: string;
   // Clean database and create one user before tests
   beforeEach((done) => {
