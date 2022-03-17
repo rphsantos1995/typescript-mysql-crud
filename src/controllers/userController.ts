@@ -20,6 +20,6 @@ const createUser = async (req: Request, res: Response, _next: NextFunction) => {
   return res.status(201).json({ token });
 };
 
-userRouter.use('/users', validateUser, createUser);
+userRouter.post('/', validateUser, createUser);
 
 export default userRouter;
