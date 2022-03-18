@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express'; 
 import jwt from 'jsonwebtoken';
-import { InputUserLogin } from '../models/interfaceUser';
+import { InputUserLogin } from '../interfaces/interfaceUser';
 import usersService from '../services/userService';
 import validateLogin from '../middlewares/validateLogin';
 

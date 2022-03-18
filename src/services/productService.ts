@@ -1,4 +1,4 @@
-import { IProduct } from '../models/interfaceProduct';
+import { IProduct } from '../interfaces/interfaceProduct';
 import productModel from '../models/productModel';
 
 const createProduct = async (userInfo: IProduct) => {
@@ -9,7 +9,6 @@ const createProduct = async (userInfo: IProduct) => {
 const getAllProducts = async () => {
   const allProducts = await productModel.getAllProducts();
   return allProducts;
-}
-
+};
 
 export default { createProduct, getAllProducts };

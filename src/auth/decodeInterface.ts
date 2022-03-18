@@ -1,9 +1,11 @@
 export interface IDecode {
-  data: {
+  data: [{
     id: number,
     username: string,
     classe: string,
     level: number,
     password: string
-  },
+  }],
+  iat: number,
+  exp: number
 }

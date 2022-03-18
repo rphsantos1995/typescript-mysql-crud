@@ -14,11 +14,16 @@ const validateToken = async (req: Request, res: Response, next: NextFunction) =>
 
   try {
     const decoded: IDecode = jwt.verify(token, JWT_SECRET) as IDecode;
+    console.log('decoded---------', decoded);
 
-    if (!decoded.data) {
+    if (!decoded.data[0].id) {
       return res.status(401).json({ error: 'Invalid token' });
     }
-   
+
+    const userId = decoded.data[0].id.toString();
+    console.log('/// ---> esse é o userId ', userId);
+    req.headers.userid = userId;
+
     // The tests drop Users table each time it runs, its not possible to check if the user exists,
    
     next();
