@@ -1,5 +1,5 @@
 import { OkPacket } from 'mysql2';
-import { IProduct, Product } from './interfaceProduct';
+import { IProduct, Product } from '../interfaces/interfaceProduct';
 import connection from './connection';
 
 const createProduct = async (product: IProduct): Promise<IProduct> => {
