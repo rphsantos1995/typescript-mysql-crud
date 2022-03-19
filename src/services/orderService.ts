@@ -1,4 +1,4 @@
-import { IOrder } from '../interfaces/interfaceOrder';
+import { IOrder, AOrder } from '../interfaces/interfaceOrder';
 import orderModel from '../models/orderModel';
 
 const createOrder = async (orderInfo: IOrder, userId: number) => {
@@ -17,4 +17,27 @@ const getOrderById = async (orderId: number) => {
   return productsInfo;
 };
 
-export default { createOrder, getOrderById };
+const getAllOrders = async () => {
+  const allOrders = await orderModel.getAllOrders();
+  
+  const getStructureOfAllOrders = () => allOrders.reduce((acc, { id, userId }) => {
+    const isRepeated = acc.some((item) => item.id === id);
+
+    if (!isRepeated) {
+      const allProducts = allOrders.filter((i) => i.id === id)
+        .map((item) => item.products);
+  
+      acc.push({
+        id, userId, products: allProducts,
+      });
+    }
+
+    return acc;
+  }, [] as AOrder[]);
+
+  const result = getStructureOfAllOrders();
+
+  return result;
+};
+
+export default { createOrder, getOrderById, getAllOrders };

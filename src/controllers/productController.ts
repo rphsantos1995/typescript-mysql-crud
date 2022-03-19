@@ -8,8 +8,6 @@ const productRouter = Router();
 
 const createProduct = async (req: Request, res: Response, _next: NextFunction) => {
   const newProduct: IProduct = req.body;
-  const userId = Number(req.headers.userid);
-  console.log('userid formato number --->', userId);
   
   const newUserCreated = await productService.createProduct(newProduct);
   return res.status(201).json({ item: { ...newUserCreated } });

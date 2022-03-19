@@ -24,7 +24,13 @@ const getOrderById = async (req: Request, res: Response, _next: NextFunction) =>
   return res.status(200).json(orderById);
 };
 
+const getAllOrders = async (req: Request, res: Response, _next: NextFunction) => {
+  const allOrders = await orderService.getAllOrders();
+  return res.status(200).json(allOrders);
+};
+
 orderRouter.post('/', validateJWT, validateOrder, createOrder);
 orderRouter.get('/:id', validateJWT, getOrderById);
+orderRouter.get('/', validateJWT, getAllOrders);
 
 export default orderRouter;

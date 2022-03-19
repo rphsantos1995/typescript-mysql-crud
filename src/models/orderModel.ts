@@ -40,4 +40,18 @@ const getOrderById = async (orderId: number) => {
   return orderById;
 };
 
-export default { createOrder, getOrderById };
+const getAllOrders = async () => {
+  const allOrdersQuery = `SELECT
+    tro.id, tro.userId, trp.id as products
+  FROM
+    Trybesmith.Orders AS tro
+  INNER JOIN
+    Trybesmith.Products AS trp 
+  ON 
+  tro.id = trp.orderId`;
+
+  const [allOrders] = await connection.execute<RowDataPacket[]>(allOrdersQuery);
+  return allOrders;
+}; 
+
+export default { createOrder, getOrderById, getAllOrders };
