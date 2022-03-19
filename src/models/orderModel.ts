@@ -1,4 +1,4 @@
-import { OkPacket } from 'mysql2';
+import { OkPacket, RowDataPacket } from 'mysql2';
 import { IOrder } from '../interfaces/interfaceOrder';
 import connection from './connection';
 
@@ -19,4 +19,25 @@ const createOrder = async (orderInfo: IOrder, userId: number) => {
   return { userId, products };
 };
 
-export default { createOrder };
+const getOrderById = async (orderId: number) => {
+  const orderByIdQuery = `SELECT
+    tro.id, tro.userId, trp.id as products
+  FROM
+    Trybesmith.Orders AS tro
+  INNER JOIN
+    Trybesmith.Products AS trp 
+  ON 
+    tro.id = trp.orderId
+  AND
+    tro.id = ?;`;
+  // const productByIdQuery = `select * from Trybesmith.Products where orderId = ?;`;
+  
+  const [orderById] = await connection.execute<RowDataPacket[]>(orderByIdQuery, [orderId]);
+  // const [productById] = await connection.execute<RowDataPacket[]>(productByIdQuery, [orderId]);
+
+  console.log('resultado do orderByid na Model: ', orderById);
+
+  return orderById;
+};
+
+export default { createOrder, getOrderById };
