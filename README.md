@@ -1,7 +1,5 @@
 # Sumário
 
-- [Boas vindas ao repositório do projeto Trybesmith!](#boas-vindas-ao-repositório-do-projeto-trybesmith)
-- [Sumário](#sumário)
 - [Habilidades](#habilidades)
 - [Entregáveis](#entregáveis)
   - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
