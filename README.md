@@ -1,15 +1,3 @@
-### Termos e acordos
-
-Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
-
-# Boas vindas ao repositório do projeto Trybesmith!
-
-Você já usa o _GitHub_ diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Tenha atenção a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀
-
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir deste repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
-
----
-
 # Sumário
 
 - [Boas vindas ao repositório do projeto Trybesmith!](#boas-vindas-ao-repositório-do-projeto-trybesmith)
@@ -56,13 +44,6 @@ Neste projeto, você será capaz de:
 
 ---
 
-# Entregáveis
-
-Para entregar o seu projeto você deverá criar um _Pull Request_ neste repositório.
-
-Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://app.betrybe.com/course/fundamentals/git) sempre que precisar!
-
----
 
 ## O que deverá ser desenvolvido
 
@@ -74,7 +55,7 @@ Você irá criar alguns _endpoints_ que irão ler e escrever em um banco de dado
 
 ## Desenvolvimento
 
-Você vai desenvolver todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) em seu código e, por meio dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados: Criação, Leitura, Atualização e Exclusão (ou `CRUD`, para as pessoas mais íntimas 😜).
+Você vai desenvolver todas as camadas da aplicação (_Models_, _Service_ e _Controllers_) em seu código e, por meio dessa aplicação, será possível realizar as operações básicas que se pode fazer em um determinado banco de dados: Criação, Leitura, Atualização e Exclusão
 
 O código para cadastro de pessoas usuárias deve ser criado por você utilizando os conhecimentos adquiridos nesse bloco.
 
@@ -98,7 +79,7 @@ O código para cadastro de pessoas usuárias deve ser criado por você utilizand
 
 1. Clone o repositório
 
-- `git clone https://github.com/tryber/sd-014-b-project-trybesmith.git`.
+- `git clone https://github.com/rphsantos1995/typescript-mysql-crud.git`.
 - Entre na pasta do repositório que você acabou de clonar:
   - `cd sd-014-b-project-trybesmith`
 
@@ -135,13 +116,13 @@ O código para cadastro de pessoas usuárias deve ser criado por você utilizand
 
 6. Crie um novo `Pull Request` _(PR)_
 
-- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-014-b-project-trybesmith/pulls)
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/rphsantos1995/typescript-mysql-crud/pulls)
 - Clique no botão verde _"New pull request"_
 - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
 - Clique no botão verde _"Create pull request"_
 - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
 - **Não se preocupe em preencher mais nada por enquanto!**
-- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-014-b-project-trybesmith/pulls) e confira que o seu _Pull Request_ está criado
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/rphsantos1995/typescript-mysql-crud/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -162,7 +143,6 @@ O código para cadastro de pessoas usuárias deve ser criado por você utilizand
 
 # Como desenvolver
 
-**⚠️ Leia-os atentamente e siga à risca o que for pedido. ⚠️**
 
 **👀 Observações importantes:**
 
@@ -831,34 +811,3 @@ Uma estratégia é pular todos os testes no início e ir implementando um teste 
 
 ---
 
-## Depois de terminar o desenvolvimento (opcional)
-
-Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
-
-* Vá até a página **DO SEU** _Pull Request_, adicione a label de _"code-review"_ e marque seus colegas:
-
-  * No menu à direita, clique no _link_ **"Labels"** e escolha a _label_ **code-review**;
-
-  * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
-
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-00`.
-
-Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
-
----
-
-# Revisando um pull request
-
-Use o conteúdo sobre [Code Review](https://app.betrybe.com/course/real-life-engineer/code-review) para te ajudar a revisar os _Pull Requests_.
-
-#VQV
-
----
-
-# Avisos finais
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
-
-Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no _README_. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
