@@ -68,8 +68,6 @@ describe("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
     expect(result.body.error).toEqual("Username must be longer than 2 characters");
   });
 
- 
-
   it('Será validado que o campo "classe" é obrigatório', async () => {
     const result = await request(app).post("/users").send({
       username: "username",
@@ -101,8 +99,6 @@ describe("1 - Crie um endpoint para o cadastro de pessoas usuárias", () => {
     expect(result.statusCode).toEqual(422);
     expect(result.body.error).toEqual("Classe must be longer than 2 characters");
   });
-
-
 
   it('Será validado que o campo "level" é obrigatório', async () => {
     const result = await request(app).post("/users").send({
@@ -601,7 +597,7 @@ describe("6 - Crie um endpoint para consultar um pedido", () => {
   });
 });
 
-describe("7 - Crie um endpoint para listar todos os pedidos", () => {
+describe.only("7 - Crie um endpoint para listar todos os pedidos", () => {
   let token: string;
 
   beforeEach(async () => {
