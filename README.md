@@ -1,6 +1,3 @@
-<br/>
-
-
 <details>
   <summary><strong>🌞‍Habilidades</strong></summary>
   
